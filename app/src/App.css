@@ -17,8 +17,9 @@
   align-items: center;
   justify-content: center;
   width: 40%;
-  margin-top: 2%;
+  margin: 2%;
   background-color: pink;
+  flex-direction: column;
 }
 
 #box {
@@ -27,24 +28,32 @@
   align-items: center;
   text-align: center;
 
+
 }
 
 #text {
   font-family: "roboto", sans-serif;
   padding: 4 0%;
-  font-size: 1.4rem;
 }
 
 h1 {
   font-family: "roboto", sans-serif;
   margin-top: 3%;
   font-size: 2rem;
+  color: palevioletred;
+  
 
   
 }
 
 #button {
   font-family: "roboto", sans-serif;
-  font-size: 1rem;
+
+}
+
+.cards{
+  display: flex;
+  justify-content: space-evenly;
+  
 
 }
