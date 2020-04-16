@@ -1,6 +1,8 @@
 import React from 'react';
-import './App.css';
 import Trivia from "./components/Trivia";
+import './App.css';
+
+
 
 function App() {
   return (

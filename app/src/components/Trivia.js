@@ -1,27 +1,45 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchTrivia } from '../store/actions/actions';
-import Loader from 'react-loader-spinner';
+import { Spinner, Button, CardText, Card } from 'reactstrap';
+
+
+
+
 
 
 const Trivia = props => {
+
+
     useEffect(() => {
         props.fetchTrivia();
     }, []);
 
     return (
-        <div>
+        <div class="all">
             <h1>Numbers Trivia</h1>
-
             {props.isFetching && (
-            <Loader type="Puff" color="#00BFFF" height={100} width={100} /> )}
+                   <Spinner color="info" />
+            )}
+             
+           <Card body id="cont" className = "text-center">
+                <CardText id="box"t>
+                   
+                        
+                            {props.trivia && 
+                            < h3 id = "text">{props.trivia}</h3>}
+                
+                            {props.error && <p>{props.error}</p>}
+                      
+                   
+                </CardText>
+               
+    
+    
+                <Button id="button"color="info" onClick={props.fetchTrivia}>Click for new fact!</Button>
+           </Card>
+           
 
-            {props.trivia && <h3>{props.trivia}</h3>}
-
-            {props.error && <p>{props.error}</p>}
-
-            <button onClick={props.fetchTrivia}>Click for new fact!</button>
-      
 
 
         </div>
@@ -37,4 +55,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {fetchTrivia})(Trivia);
+export default connect(mapStateToProps, { fetchTrivia })(Trivia);
